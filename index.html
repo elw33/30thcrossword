@@ -310,7 +310,7 @@
     const acrossEl = document.getElementById('across');
     const downEl = document.getElementById('down');
     const statusEl = document.getElementById('status');
-    //const toggleBtn = document.getElementById('toggleAnswers');
+    const toggleBtn = document.getElementById('toggleAnswers');
     const rebuildBtn = document.getElementById('rebuild');
     const checkBtn = document.getElementById('check');
     const clearBtn = document.getElementById('clear');
@@ -327,12 +327,12 @@
         renderClues(acrossEl,downEl,res.across,res.down);
       }, 10);
     }
-/*
+
     toggleBtn.addEventListener('click',()=>{ showing=!showing; toggleBtn.textContent=showing?'Hide Answers':'Show Answers'; if(current) renderGrid(gridEl,current.grid,current.numbers,showing); });
     rebuildBtn.addEventListener('click', rebuild);
     checkBtn.addEventListener('click', ()=>{ if(!current) return; let correct=0,total=0; document.querySelectorAll('.cell-input').forEach(inp=>{ if(inp.disabled) return; total++; const good=inp.value&&inp.value.toUpperCase()===inp.dataset.solution; const cell=inp.parentElement; cell.classList.remove('correct','incorrect'); if(good){ cell.classList.add('correct'); correct++; } else if(inp.value){ cell.classList.add('incorrect'); } }); statusEl.textContent = total? `Correct: ${correct}/${total}` : ''; });
     clearBtn.addEventListener('click', ()=>{ document.querySelectorAll('.cell-input').forEach(inp=>{ if(!inp.disabled){ inp.value=''; inp.parentElement.classList.remove('correct','incorrect'); } }); const first=document.querySelector('.cell-input:not([disabled])'); if(first) first.focus(); });
-*/
+
     // --- Smoke Tests (console) ---
     (function runTests(){
       const res = generate(RAW_ENTRIES, 50);
